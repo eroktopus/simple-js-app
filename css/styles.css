@@ -1,0 +1,33 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* Sets the font size to 16px */
+    line-height: 1.6;
+    /* Sets the line-height to 1.6 */
+    background-color: #055e11;
+}
+.form__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    margin: auto;
+    text-align: center;
+    clear: both;
+    text-align: center;
+    flex-direction: column;
+}
+p {
+    color: #1515c0;
+    font-weight: 600;
+    font-size: 18px;
+}
+a {
+    color: #101054;
+}
+body {
+    padding: 30px; /* adds 10px inner spacing to all sides */
+    margin: 0 auto; /* Adds a 10px spacing to all sides */
+  }
+
