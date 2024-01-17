@@ -31,3 +31,26 @@ body {
     margin: 0 auto; /* Adds a 10px spacing to all sides */
   }
 
+.pokemon-list {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: left;
+    list-style-type: none;
+}
+.pokedex-list {
+    border: none;
+    color: rgb(9, 132, 203);
+    padding: 16px 32px; /* padding on button */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bolder;/* bolder text */
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(27, 188, 213); /* changed button color */
+    color: black;
+    border: 2px solid #181a18; /* changed border color */
+}
