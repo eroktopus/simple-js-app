@@ -47,15 +47,14 @@ function addListItem(pokemon){
 });
 }
 function showDetails(pokemon) {
-    let button = document.querySelector('button');
-    button.addEventListener('click', function log(pokemon) {
-    console.log(pokemon.name);
-  });
-}
+   console.log(pokemon.name)
+  }
+
 return {
 add: add,
 getAll: getAll,
-addListItem: addListItem
+addListItem: addListItem,
+showDetails: showDetails
 }; 
 // function addListItem(pokemon)
 })(); 
