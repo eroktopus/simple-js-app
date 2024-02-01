@@ -27,6 +27,15 @@ let pokemonRepository = (function () {
       console.log(pokemon);
     });
   }
+
+  function showLoadMessage() { 
+    let logocontainer = document.querySelector(".pokemon-list");
+    let loadMessage = document.createElement("h4");
+    loadMessage.classList.add("load-message");
+    loadMessage.innerText = "Loading Data ....";
+    logocontainer.appendChild(loadMessage);
+  }
+
 function loadList() {
       return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -34,6 +43,7 @@ function loadList() {
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
+          height: item.height,
           detailsUrl: item.url
         };
         add(pokemon);
@@ -59,13 +69,14 @@ function loadList() {
   return {
     add: add,
     getAll: getAll,
+    loadMessage: loadMessage,
     loadList: loadList,
     loadDetails: loadDetails,
     addListItem: addListItem,
     showDetails: showDetails
   };
 
-  function showModal(title, text) {
+  function showModal() {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.innerHTML = '';
     let modal = document.createElement('div');
@@ -82,11 +93,15 @@ function loadList() {
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
+    let pokeImg = document.createElement('img'); 
+    pokeImg.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png';
+    pokeImg.classList.add('poke-img');
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
-    
+    modalContainer.appendChild(pokeImg);
     modalContainer.classList.add('is-visible');
   }
 
