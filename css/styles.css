@@ -23,12 +23,29 @@ p {
     font-weight: 600;
     font-size: 18px;
 }
+.phrase {
+  color: rgb(90, 13, 13);
+  font-weight: 500;
+  font-size: 24px;
+}
 a {
     color: #101054;
 }
 body {
     padding: 30px; /* adds 10px inner spacing to all sides */
     margin: 0 auto; /* Adds a 10px spacing to all sides */
+  }
+
+  .main-title {
+    color: rgb(9, 132, 203);
+    font-weight: 600;
+    font-size: 50px;
+  }
+
+  .catch-title {
+   
+    padding: 1em 2em;
+    border: 0;
   }
 
 .pokemon-list {
@@ -53,7 +70,9 @@ body {
     background-color: rgb(27, 188, 213); /* changed button color */
     color: black;
     border: 2px solid #181a18; /* changed border color */
+    text-transform: capitalize;
 }
+
 .input-wrapper {
     margin-bottom: 10px;
   }
@@ -86,49 +105,32 @@ body {
   left: 0;
   top: 0;
   height: 100%;
-  width: 100%;
+  width: %;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content{
     background-color: #7f7b7b;
-    margin: 20% auto;
+    margin: 5% auto;
     padding: 20px;
-    width: 70%;
+    width: 40%;
+    height: 80%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba (0,0,0.17);
     animation-name: modalopen;
     animation-duration: var(3s);
-    
+    }
+
+
+.close {
+  color: rgb(90, 13, 13); 
 }
 
-.closeBtn{
-    color: #000000;
-    float: right;
-    font-size: 30px;
+.pokemon-nomenclature {
+  color: rgb(90, 13, 13);
+  font-weight: bold; 
+  text-transform: capitalize;
 }
-
-.closeBtn:hover, .closeBtn:focus{
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header h2,
-.modal-footer h3 {
-  margin: 0;
-  
-
-}
-
-.modal-header {
-  display: block;
-  text-align: left;
-  background: var(--modal-color);
-  color: #0d594b;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  }
 
 .modal-body {
   float: left;
