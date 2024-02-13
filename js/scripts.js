@@ -12,10 +12,12 @@ let pokemonRepository = (function () {
   }
   // turn pokemon to buttons and print without document. write
   function addListItem(pokemon) {
-    let container = document.querySelector('.pokemon-list');
+    let container = document.querySelector('.list-group');
     let list = document.createElement('li');
+    list.classList.add('list-group-item')
     let button = document.createElement('button'); /* create button */
     button.innerText = pokemon.name;
+    button.classList.add("btn");
     button.classList.add("pokedex-list");
     container.appendChild(button);
     container.appendChild(list);
