@@ -10,21 +10,48 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
-  // turn pokemon to buttons and print without document. write
+
   function addListItem(pokemon) {
     let container = document.querySelector('.list-group');
-    let list = document.createElement('li');
-    list.classList.add('list-group-item')
-    let button = document.createElement('button'); /* create button */
+
+    // Check if the number of existing columns is divisible by 4 to determine if a new row is needed
+    let existingColumns = container.querySelectorAll('.row .col-md-2');
+    if (existingColumns.length % 6 === 0) {
+        // If the number of existing columns is divisible by 4, create a new row
+        var row = document.createElement('div');
+        row.classList.add('row');
+        container.appendChild(row);
+    } else {
+        // If not, get the last row
+        var row = container.lastChild;
+    }
+
+    // Create a new column
+    let col = document.createElement('div');
+    col.classList.add('col-md-2'); // Each column will take up 3 units of space in medium-sized screens to fit 4 columns in a row
+    col.classList.add('d-flex'); // Make the column flex container
+    col.classList.add('justify-content-center'); 
+
+    // Create the button
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add("btn");
-    button.classList.add("pokedex-list");
-    container.appendChild(button);
-    container.appendChild(list);
+    button.classList.add("btn-primary"); // Add your button styling classes here
+    button.classList.add("btn-custom"); // Add custom button class
+
+    
+    col.appendChild(button);
+    row.appendChild(col);
+
+    // Add event listener to the button
     button.addEventListener('click', function(event) {
-      showDetails(pokemon);
+        showDetails(pokemon);
     });
-  }
+}
+
+
+
+
  
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
