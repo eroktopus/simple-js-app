@@ -1,3 +1,22 @@
+body,
+h1,
+h2,
+h3,
+button,
+.modal-content {
+  font-family: "comfortaa";
+  font-weight: 700;
+}
+
+.header-title {
+  text-align: center; /* Centers text horizontally */
+}
+
 button {
   cursor: pointer important; /* Override any other cursor styles */
+}
+
+.modal-content {
+  cursor: default important;
+  border-radius: 10px; /* Override any other cursor styles */
 }
